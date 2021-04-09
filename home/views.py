@@ -1,20 +1,24 @@
-from django.shortcuts import render
-from django.http import HttpResponse
-from django.contrib.auth.forms import UserCreationForm
+#view.py
+from django.shortcuts import render, redirect, HttpResponseRedirect
+from home.models import Member #models.py
+ 
 # Create your views here.
-def home(request):
-    text = "<h1>home<h1>"
-    return HttpResponse(text)
+def index(request):
+    if request.method == 'POST':
+        member = Member(username=request.POST['username'], password=request.POST['password'],  firstname=request.POST['firstname'], lastname=request.POST['lastname'])
+        member.save()
+        return redirect('/')
+    else:
+        return render(request, 'index.html')
+ 
 def login(request):
-    form = UserCreationForm()
-    context = {'form':form}
-    return render(request,'login.html',context)
-def register(request):
-    text = "<h1>register<h1>"
-    return HttpResponse(text)
-def security(request):
-    text = "<h1>Security<h1>"
-    return HttpResponse(text)
-def visitor(request):
-    text = "<h1>visitor<h1>"
-    return HttpResponse(text)
+    return render(request, 'login.html')
+ 
+def home(request):
+    if request.method == 'POST':
+        if Member.objects.filter(username=request.POST['username'], password=request.POST['password']).exists():
+            member = Member.objects.get(username=request.POST['username'], password=request.POST['password'])
+            return render(request, 'home.html', {'member': member})
+        else:
+            context = {'msg': 'Invalid username or password'}
+            return render(request, 'login.html', context)

@@ -1,10 +1,11 @@
-from django.urls import path
-from . import views
-urlpatterns = [
-    path('', views.home, name = 'home'),
-    path('login/' , views.login, name = 'login'),
-    path('register/' , views.register, name = 'register'),
-    path('security/' , views.security, name = 'security'),
-    path('visitor/' , views.visitor, name = 'visitor'),
-    
-]
+#urls.py
+from django.contrib import admin  
+from django.urls import path  
+from home import views  
+ 
+urlpatterns = [  
+    path('admin/', admin.site.urls),  
+    path('',views.index),
+    path('login/',views.login),
+    path('home/',views.home),
+]  
