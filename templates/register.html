@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- <a class="btn btn-primary" href="">Faculty/staff</a>
+    <a class="btn btn-primary" href="">Security</a>
+    <a class="btn btn-primary" href="" >Visitor</a>     -->
+    <!-- <DIV ID="SectionName" STYLE="display:none">Text to be shown and hidden</DIV>
+    <DIV ID="SectionName2" STYLE="display:none">Second</DIV> -->
+    <!-- <BUTTON ONCLICK="ShowAndHide('SectionName2')">Click me</BUTTON> -->
+    
+    <button onclick="ShowAndHide('faculty')">Faculty</button>
+    <button onclick="ShowAndHide('security')">Security</button>
+    <button onclick="ShowAndHide('visitor')">Visitor</button>
+    <div style="display:none" id='faculty'>
+        <form action="/register/" method="post">
+            {% csrf_token %}
+            {{ form1.as_p }}
+            <input type="submit" value="Submit" name ="submit1" onclick="">
+        </form>
+    </div>
+    <div style="display:none" id='security'>
+        <form action="/register/" method="post">
+            {% csrf_token %}
+            {{ form2.as_p }}
+            <input type="submit" value="Submit" name = "submit2" onclick="">
+        </form>
+    </div>
+    <div style="display:none" id='visitor'>
+        <form  action="/register/" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form3.as_p }}
+            <input type="submit" value="Submit" name = "submit3" onclick="ShowAndHide('faculty')">
+        </form>
+    </div>
+        
+    <script>
+     function ShowAndHide(d)
+        {
+            var onediv = document.getElementById(d);
+            var divs=['faculty','security','visitor'];
+            for (var i=0;i<divs.length;i++)
+            {
+            if (onediv != document.getElementById(divs[i]))
+                {
+                document.getElementById(divs[i]).style.display='none';
+                }
+            }
+            onediv.style.display = 'block';
+        } 
+        {% if messages %}
+            {% for message in messages %}
+                alert('{{message}}')
+            {% endfor %}
+        {% endif %}
+    </script>
+</body>
+</html>
