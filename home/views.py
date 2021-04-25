@@ -1,3 +1,4 @@
+from datetime import date
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth.forms import UserCreationForm
@@ -103,21 +104,28 @@ def register(request):
 
 
 def security(request,username):
-    text = "<h1>Security<h1>"
-    return HttpResponse(text)
+    query2 = appointments.objects.filter(status = 'Accepted',doa=date.today()).order_by('doa','timeIn')
+
+    context = {'appointments':query2}
+    return render(request,'security.html',context)
+
 def faculty(request,username):
     text = "<h1>faculty<h1>"
     return HttpResponse(text)
+
 def visitormail(request,username,fid):
     form = appointmentForm()
     if request.method == "POST":
         form = appointmentForm(request.POST)
         if form.is_valid():
             query = info.objects.get(id=fid)
+            query1 = visitort.objects.get(username = username)
             d = form.cleaned_data['doa']
             t = form.cleaned_data['timeIn']
             p = form.cleaned_data['purpose']
-            obj=appointments(username = username, 
+            obj=appointments(fname = query.name,
+            vname = query1.name,
+            username = username, 
             email = query.email, 
             doa = d,
             timeIn = t,
@@ -128,11 +136,15 @@ def visitormail(request,username,fid):
             return redirect(visitor,username=username)
         else:
             form = appointmentForm()
-    context = {'form':form,'uname':username, 'ffid': fid}
+    
+    context = {'form':form, 'ffid': fid, 'uname': username}
     return render(request,"visitormail.html",context)
+
 def visitor(request,username):
     obj = info.objects.all()
-    context = {'obj':obj}
+    query2 = appointments.objects.filter(username = username)
+    print(query2)
+    context = {'obj':obj,'uname':username, 'appointments':query2}
     return render(request,'visitor.html',context)
 
 def emailfaculty(oid):
@@ -149,11 +161,13 @@ def emailfaculty(oid):
     fail_silently=False)
     print(obj.email)
     text = "<h1>random<h1>"
+
 def accept(request,tokenid):
     obj = appointments.objects.get(token=tokenid)
     obj.status = "Accepted"
     obj.save()
     return HttpResponse("accept")
+
 def decline(request,tokenid):
     obj = appointments.objects.get(token=tokenid)
     obj.status = "Declined"

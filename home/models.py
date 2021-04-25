@@ -49,8 +49,10 @@ class visitort(models.Model):
         return self.username
 
 class appointments(models.Model):
-    username = models.ForeignKey(visitort, on_delete=models.CASCADE, null=True)
-    email = models.ForeignKey(facultyt, on_delete=models.CASCADE, null=True)
+    fname = models.CharField(max_length=50)
+    vname = models.CharField(max_length=50)
+    username = models.CharField(max_length=50)
+    email = models.CharField(max_length=50)
     doa = models.DateField()
     timeIn = models.TimeField()
     purpose = models.TextField()

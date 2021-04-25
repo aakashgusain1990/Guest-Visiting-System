@@ -15,11 +15,14 @@
     <button onclick="showAndHide('va')">view appointments</button>
     <button onclick="showAndHide('ma')">make appointments</button>
     <div style="display:none" id = "va">
-        jskjfl
+        {% for appointment in appointments %}
+        <p>{{ appointment.fname }} {{ appointment.timeIn }} {{ appointment.doa }} {{ appointment.purpose }} {{ appointment.status }} {{ appointment.token }}</p>
+    {% endfor %}
     </div>
     <div style="display:none" id = "ma">
-        {% for i in obj %}
-        <p>{{ i.name}} {{ i.email }} {{i.status}}<a class="btn btn-primary" href="{% url 'visitormail' username='abc' fid=i.id %}">{{ i.id }}</a></p>
+        {{ uname }}
+        {% for i in obj %} 
+        <p>{{ i.name}} {{ i.email }} {{i.status}}<a class="btn btn-primary" href="{% url 'visitormail'  username=uname fid=i.id %}">{{ i.id }}</a></p>
     {% endfor %}
     </div>
     
