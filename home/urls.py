@@ -9,5 +9,6 @@ urlpatterns = [
     path('visitor/<str:username>' , views.visitor, name = 'visitor'),
     path('visitor/<str:username>/<int:fid>' , views.visitormail, name = 'visitormail'),
     path('accept/<str:tokenid>',views.accept, name = 'accept'),
-    path('decline/<str:tokenid>',views.decline, name = 'decline')
+    path('decline/<str:tokenid>',views.decline, name = 'decline'),
+    path('declined/<str:username>/<int:oid>',views.emailvisitor, name = 'emailvisitor')
 ]

@@ -104,14 +104,16 @@ def register(request):
 
 
 def security(request,username):
-    query2 = appointments.objects.filter(status = 'Accepted',doa=date.today()).order_by('doa','timeIn')
+    query = appointments.objects.filter(status = 'Accepted',doa=date.today()).order_by('doa','timeIn')
 
-    context = {'appointments':query2}
+    context = {'appointments':query}
     return render(request,'security.html',context)
 
 def faculty(request,username):
-    text = "<h1>faculty<h1>"
-    return HttpResponse(text)
+    query = facultyt.objects.get(username=username)
+    query1 = appointments.objects.filter(email=query.email).order_by('doa','timeIn')
+    context = {'appointments':query1, 'uname':username}
+    return render(request,'faculty.html',context)
 
 def visitormail(request,username,fid):
     form = appointmentForm()
@@ -136,7 +138,6 @@ def visitormail(request,username,fid):
             return redirect(visitor,username=username)
         else:
             form = appointmentForm()
-    
     context = {'form':form, 'ffid': fid, 'uname': username}
     return render(request,"visitormail.html",context)
 
@@ -146,7 +147,7 @@ def visitor(request,username):
     print(query2)
     context = {'obj':obj,'uname':username, 'appointments':query2}
     return render(request,'visitor.html',context)
-
+    
 def emailfaculty(oid):
     obj = appointments.objects.get(id=oid)
     print(obj)
@@ -162,14 +163,48 @@ def emailfaculty(oid):
     print(obj.email)
     text = "<h1>random<h1>"
 
+def emailvisitor(request,username,oid):
+    obj = appointments.objects.get(id=oid)
+    query = visitort.objects.get(username=obj.username)
+    print("query",query.email)
+    message = f'Hi declined'
+    send_mail('SUBJECT',
+    message,
+    'aakashgusain2806@gmail.com',
+    [str(query.email)],
+    fail_silently=False)
+    print(obj.email)
+    text = "<h1>random<h1>"
+    return redirect(faculty, username=username)
+    return HttpResponse("declined")
+
 def accept(request,tokenid):
     obj = appointments.objects.get(token=tokenid)
     obj.status = "Accepted"
     obj.save()
+    query = visitort.objects.get(username=obj.username)
+    message = f'Hi accepted at starting'
+    send_mail('SUBJECT',
+    message,
+    'aakashgusain2806@gmail.com',
+    [str(query.email)],
+    fail_silently=False)
+    print(obj.email)
+    text = "<h1>random<h1>"
     return HttpResponse("accept")
 
 def decline(request,tokenid):
     obj = appointments.objects.get(token=tokenid)
     obj.status = "Declined"
     obj.save()
+    query = visitort.objects.get(username=obj.username)
+    print("query",query.email)
+    message = f'Hi declined at starting'
+    send_mail('SUBJECT',
+    message,
+    'aakashgusain2806@gmail.com',
+    [str(query.email)],
+    fail_silently=False)
+    print(obj.email)
+    text = "<h1>random<h1>"
     return HttpResponse("decline")

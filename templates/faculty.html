@@ -10,12 +10,12 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Security</h1>
+    <h1>Faculty</h1>
     <br/>
     
     <div  id = "va">
         {% for appointment in appointments %}
-        <p>{{ appointment.fname }} {{ appointment.timeIn }} {{ appointment.doa }} {{ appointment.purpose }} {{ appointment.status }} {{ appointment.token }}</p>
+        <p>{{ appointment.vname }} {{ appointment.timeIn }} {{ appointment.doa }} {{ appointment.purpose }} {{ appointment.status }} {{ appointment.token }}&nbsp;<a class="btn btn-primary" href="{% url 'emailvisitor' uname appointment.id %}">decline</a></p>
     {% endfor %}
     </div>
     
