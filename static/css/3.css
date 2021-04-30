@@ -1,0 +1,56 @@
+
+body{
+	background-image: url('/static/images/1.jpg');
+	background-size: cover;
+}
+
+ h2{
+color: #00008B;
+text-decoration-style: wavy;
+font-family: 'Open Sans Condensed', sans-serif;
+font-size: 30px;
+}
+
+form {
+  background-color: #FFFF99 ;
+  width: 450px;
+  height: 100px
+  margin: -120px 0 0 -182px;
+  padding: 10px;
+  box-shadow: 0 0 40px #FFFF99;
+ 
+  }
+g{
+background-color: #FFFF99 ;
+ position: absolute;
+  top: 10%;
+  left: 35%;
+}
+.k{
+color: #00008B;
+text-decoration-style: wavy;
+font-family: 'Open Sans Condensed', sans-serif;
+font-size: 30px;
+
+}
+
+
+input{
+  font-family: 'Open Sans Condensed', sans-serif;
+  text-decoration: none;
+  position: relative;
+  width: 80%;
+  display: block;
+  margin: 9px auto;
+  font-size: 17px;
+  color: #00008B;
+  padding: 8px;
+  border-radius: 6px;
+  border: none;
+  background: rgba(3,3,3,.1);
+  -webkit-transition: all 2s ease-in-out;
+  -moz-transition: all 2s ease-in-out;
+  -o-transition: all 2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+

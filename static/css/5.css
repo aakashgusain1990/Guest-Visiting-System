@@ -1,0 +1,51 @@
+body{
+	background-image: url('/static/images/1.jpg');
+	background-size: cover;
+}
+p{
+text-align: center;
+font-size: 30px;
+font-family: 'Open Sans Condensed', sans-serif;
+}
+.dee{
+  background-color: #FFFF99 ;
+  color: #00008B;
+  position: absolute;
+  top: 15%;
+  left: 35%;
+  padding: 10px;
+  overflow:scroll;
+  height:400px;
+  width: 30%;
+  box-shadow: 0 0 40px #FFFF99; 
+  display: block;
+  text-align: center;
+  font-family: 'Open Sans Condensed', sans-serif;
+ 
+  }
+g{
+  top: 10%;
+  }
+.b2{
+ background-color: #FFFF99 ;
+  color: #00008B;
+  overflow-y: auto;
+   border: 2px solid darkblue;
+   width = 0%;
+  padding: 10px 20px;
+  text-align: center;
+  display: inline-block;
+font-size: 24px;
+font-family: 'Open Sans Condensed', sans-serif;
+}
+table, td, th {
+  border: 2px solid yellow;
+   border-collapse: collapse;
+  width: 75%;
+  left: 30%;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}

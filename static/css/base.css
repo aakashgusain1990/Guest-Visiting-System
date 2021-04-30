@@ -1,0 +1,35 @@
+p{
+color: #FFFF99;
+text-decoration-style: wavy;
+font-family: 'Open Sans Condensed', sans-serif;
+ position: absolute;
+font-size: 100px;
+  top: 10%;
+  left: 25%;
+}
+body{
+	background-image: url('/static/images/1.jpg');
+	background-size: cover;
+}
+c{
+ position: absolute;
+  top: 35%;
+  left: 35%;
+}
+a:link {
+font-family: 'Open Sans Condensed', sans-serif;
+  background-color: #FFFF99;
+  
+font-size: 30px;
+  color: #00008B;
+  border: 2px solid darkblue;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+a:hover{
+  background-color:#20B2AA;
+  color: white;
+}

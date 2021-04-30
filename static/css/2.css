@@ -1,0 +1,77 @@
+body{
+	background-image: url('/static/images/1.jpg');
+	background-size: cover;
+}
+p{
+text-align: center;
+font-size: 30px;
+font-family: 'Open Sans Condensed', sans-serif;
+}
+
+ .dee{
+  background-color: #FFFF99 ;
+  color: #00008B;
+  position: absolute;
+  top: 15%;
+  left: 35%;
+  padding: 10px;
+  overflow:scroll;
+  height:400px;
+  width: 30%;
+  box-shadow: 0 0 40px #FFFF99; 
+  display: block;
+  text-align: center;
+  font-family: 'Open Sans Condensed', sans-serif;
+ 
+  }
+  .deep{
+  background-color: #FFFF99 ;
+  background-size: fit;
+  color: #00008B;
+  position: absolute;
+  text-align: center;
+  top: 15%;
+  overflow:scroll;
+  height:400px;
+  left: 35%;
+  width: 35%;
+  padding: 10px;
+  box-shadow: 0 0 40px #FFFF99;
+   font-family: 'Open Sans Condensed', sans-serif;
+  }
+  g{
+  width: 30%;
+  top: 10%;
+  
+  }
+  .b1 {
+ background-color: #FFFF99 ;
+  color: #00008B;
+  overflow-y: auto;
+   border: 2px solid darkblue;
+   width = 50%
+  padding: 10px 20px;
+  text-align: center;
+  display: inline-block;
+font-size: 24px;
+font-family: 'Open Sans Condensed', sans-serif;
+}
+
+input{
+  font-family: 'Open Sans Condensed', sans-serif;
+  text-decoration: none;
+  position: relative;
+  width: 80%;
+  display: block;
+  margin: 9px auto;
+  font-size: 17px;
+  color: #00008B;
+  padding: 8px;
+  border-radius: 6px;
+  border: none;
+  background: rgba(3,3,3,.1);
+  -webkit-transition: all 2s ease-in-out;
+  -moz-transition: all 2s ease-in-out;
+  -o-transition: all 2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}

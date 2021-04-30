@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+{% load static %}
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,9 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <title>Document</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/2.css' %}">
+    
 </head>
 <body>
 
@@ -17,26 +21,38 @@
     <!-- <DIV ID="SectionName" STYLE="display:none">Text to be shown and hidden</DIV>
     <DIV ID="SectionName2" STYLE="display:none">Second</DIV> -->
     <!-- <BUTTON ONCLICK="ShowAndHide('SectionName2')">Click me</BUTTON> -->
-    
-    <button onclick="ShowAndHide('faculty')">Faculty</button>
-    <button onclick="ShowAndHide('security')">Security</button>
-    <button onclick="ShowAndHide('visitor')">Visitor</button>
-    <div style="display:none" id='faculty'>
-        <form action="/register/" method="post">
+
+    <g class="w3-sidebar w3-transparent w3-bar-block" style="width:15%;padding:10px 20px">
+    <p style = "color: #FFFF99">Register As</p>
+    <button class="buttons b1" onclick="ShowAndHide('faculty')">Faculty</button>
+    </br>
+    </br>
+    </br>
+    <button class="buttons b1" onclick="ShowAndHide('security')">Security</button>
+    </br>
+    </br>
+    </br>
+    <button class="buttons b1" onclick="ShowAndHide('visitor')">Visitor</button>
+    </g>
+    <div  style="display:none" id='faculty'>
+        <form class ="dee" action="/register/" method="post">
+         <h2>Register as Faculty</h2>
             {% csrf_token %}
             {{ form1.as_p }}
             <input type="submit" value="Submit" name ="submit1" onclick="">
         </form>
     </div>
     <div style="display:none" id='security'>
-        <form action="/register/" method="post">
+        <form class ="dee" action="/register/" method="post">
+        <h2>Register as Security</h2>
             {% csrf_token %}
             {{ form2.as_p }}
             <input type="submit" value="Submit" name = "submit2" onclick="">
         </form>
     </div>
     <div style="display:none" id='visitor'>
-        <form  action="/register/" method="post" enctype="multipart/form-data">
+        <form class ="dee" action="/register/" method="post" enctype="multipart/form-data">
+         <h2>Register as Visitor</h2>
             {% csrf_token %}
             {{ form3.as_p }}
             <input type="submit" value="Submit" name = "submit3" onclick="ShowAndHide('faculty')">

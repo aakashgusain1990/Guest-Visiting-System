@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+{% load static %}
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,21 +9,42 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <title>Document</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/5.css' %}">
 </head>
 <body>
-    <h>visitor</h>
+    
     <br/>
-    <button onclick="showAndHide('va')">view appointments</button>
-    <button onclick="showAndHide('ma')">make appointments</button>
+    
+   <g class="w3-sidebar w3-transparent w3-bar-block" style="width:15%;padding:10px 20px">
+   <p style = "color: #FFFF99">Visitor</p>
+    <button class="buttons b2" onclick="showAndHide('va')">View Appointments</button>
+    <button class="buttons b2" onclick="showAndHide('ma')">Make Appointments</button>
+    </g>
+
     <div style="display:none" id = "va">
         {% for appointment in appointments %}
         <p>{{ appointment.fname }} {{ appointment.timeIn }} {{ appointment.doa }} {{ appointment.purpose }} {{ appointment.status }} {{ appointment.token }}</p>
     {% endfor %}
     </div>
-    <div style="display:none" id = "ma">
+   
+    <div style="left: 30%" id = "ma">
         {{ uname }}
+   
         {% for i in obj %} 
-        <p>{{ i.name}} {{ i.email }} {{i.status}}<a class="btn btn-primary" href="{% url 'visitormail'  username=uname fid=i.id %}">{{ i.id }}</a></p>
+       <table> 
+       <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Status</th>
+    </tr>
+    <tr>
+    <td>{{ i.name}}</td>
+    <td>{{ i.email }}</td>
+    <td>{{i.status}}</td>
+    <td><a class="btn btn-primary" href="{% url 'visitormail'  username=uname fid=i.id %}">{{ i.id }}</a></td>
+  </tr>
+  </table>
     {% endfor %}
     </div>
     

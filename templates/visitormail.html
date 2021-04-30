@@ -1,18 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+{% load static %}
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/3.css' %}">
 </head>
 <body>
     <div  id='visitor'>
+    <g>
         <form  action="{% url 'visitormail' username=uname fid=ffid %}" method="post" enctype="multipart/form-data">
-            {% csrf_token %}
+         <h2>Make an Appointment </h2>    
+        {% csrf_token %}
             {{ form.as_p }}
             <input type="submit" value="Submit" name = "submit3" onclick="">
         </form>
+        </g>
     </div>
     <script>
         {% if messages %}
