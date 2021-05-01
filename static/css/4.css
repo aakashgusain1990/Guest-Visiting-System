@@ -7,11 +7,40 @@ text-align: center;
 font-size: 30px;
 font-family: 'Open Sans Condensed', sans-serif;
 }
+.dee{
+  background-color: #D291BC  ;
+  color: #00008B;
+  position: absolute;
+  top: 15%;
+  left: 20%;
+  padding: 10px;
+  overflow:scroll;
+  height:300px;
+  width: 70%;
+  box-shadow: 0 0 40px #D291BC ; 
+  display: block;
+  text-align: center;
+  font-family: 'Open Sans Condensed', sans-serif;
+ 
+  }
 g{
   top: 10%;
   }
+  C{
+  top: 40%;
+  left: 30%;
+  }
+  h3{
+color: #FFFF99;
+text-decoration-style: wavy;
+font-family: 'Open Sans Condensed', sans-serif;
+ position: absolute;
+font-size: 50px;
+  top: 2%;
+  left: 38%;
+}
 .b2{
- background-color: #FFFF99 ;
+ background-color: #D291BC  ;
   color: #00008B;
   overflow-y: auto;
    border: 2px solid darkblue;
@@ -23,11 +52,16 @@ font-size: 24px;
 font-family: 'Open Sans Condensed', sans-serif;
 }
 table, td, th {
-  border: 1px solid black;
+background-color: #D291BC  ;
+  border: 2px solid darkblue;
+   border-collapse: collapse;
+  width: 35%;
   left: 30%;
 }
 
 table {
+background-color: #D291BC  ;
+  border: 2px solid darkblue;
   width: 100%;
   border-collapse: collapse;
 }

@@ -8,7 +8,7 @@ font-size: 30px;
 font-family: 'Open Sans Condensed', sans-serif;
 }
 .dee{
-  background-color: #FFFF99 ;
+  background-color: #D291BC  ;
   color: #00008B;
   position: absolute;
   top: 15%;
@@ -17,7 +17,7 @@ font-family: 'Open Sans Condensed', sans-serif;
   overflow:scroll;
   height:400px;
   width: 30%;
-  box-shadow: 0 0 40px #FFFF99; 
+  box-shadow: 0 0 40px #D291BC ; 
   display: block;
   text-align: center;
   font-family: 'Open Sans Condensed', sans-serif;
@@ -27,7 +27,7 @@ g{
   top: 10%;
   }
 .b2{
- background-color: #FFFF99 ;
+ background-color: #D291BC  ;
   color: #00008B;
   overflow-y: auto;
    border: 2px solid darkblue;
@@ -39,13 +39,16 @@ font-size: 24px;
 font-family: 'Open Sans Condensed', sans-serif;
 }
 table, td, th {
-  border: 2px solid yellow;
+background-color: #D291BC ;
+  border: 2px solid darkblue;
    border-collapse: collapse;
   width: 75%;
   left: 30%;
 }
 
 table {
+background-color: #D291BC  ;
+  border: 2px solid darkblue;
   width: 100%;
   border-collapse: collapse;
 }

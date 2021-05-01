@@ -9,7 +9,7 @@ font-family: 'Open Sans Condensed', sans-serif;
 }
 
  .dee{
-  background-color: #FFFF99 ;
+  background-color: #D291BC ;
   color: #00008B;
   position: absolute;
   top: 15%;
@@ -18,14 +18,14 @@ font-family: 'Open Sans Condensed', sans-serif;
   overflow:scroll;
   height:400px;
   width: 30%;
-  box-shadow: 0 0 40px #FFFF99; 
+  box-shadow: 0 0 40px #D291BC ; 
   display: block;
   text-align: center;
   font-family: 'Open Sans Condensed', sans-serif;
  
   }
   .deep{
-  background-color: #FFFF99 ;
+  background-color: #D291BC  ;
   background-size: fit;
   color: #00008B;
   position: absolute;
@@ -36,7 +36,7 @@ font-family: 'Open Sans Condensed', sans-serif;
   left: 35%;
   width: 35%;
   padding: 10px;
-  box-shadow: 0 0 40px #FFFF99;
+  box-shadow: 0 0 40px #D291BC ;
    font-family: 'Open Sans Condensed', sans-serif;
   }
   g{
@@ -45,7 +45,7 @@ font-family: 'Open Sans Condensed', sans-serif;
   
   }
   .b1 {
- background-color: #FFFF99 ;
+ background-color: #D291BC  ;
   color: #00008B;
   overflow-y: auto;
    border: 2px solid darkblue;

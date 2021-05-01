@@ -10,10 +10,10 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <title>Document</title>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/5.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/4.css' %}">
 </head>
 <body>
-    
+   
     <br/>
     
    <g class="w3-sidebar w3-transparent w3-bar-block" style="width:15%;padding:10px 20px">
@@ -21,33 +21,55 @@
     <button class="buttons b2" onclick="showAndHide('va')">View Appointments</button>
     <button class="buttons b2" onclick="showAndHide('ma')">Make Appointments</button>
     </g>
+    <c>
 
     <div style="display:none" id = "va">
-        {% for appointment in appointments %}
-        <p>{{ appointment.fname }} {{ appointment.timeIn }} {{ appointment.doa }} {{ appointment.purpose }} {{ appointment.status }} {{ appointment.token }}</p>
+    <h3>Appointments Approved </h3>
+    <table class ="dee"> 
+     
+       <tr>
+    <th>Name</th>
+    <th>TimeIn</th>
+    <th>Date</th>
+    <th>Purpose</th>
+    <th>Status</th>
+    <th>Token</th>
+    </tr>
+    {% for appointment in appointments %}
+    <tr>
+    <td>{{ appointment.fname }}</td>
+    <td>{{ appointment.timeIn }}</td>
+    <td>{{ appointment.doa }}</td>
+    <td>{{ appointment.purpose }}</td>
+    <td>{{ appointment.status }}</td>
+    <td>{{ appointment.token }}</td>
+  </tr>
     {% endfor %}
+    </table>
+        
     </div>
-   
+    </c>
+   <c>
     <div style="left: 30%" id = "ma">
-        {{ uname }}
-   
-        {% for i in obj %} 
-       <table> 
+    <h3>Faculty List </h3>
+       <table class ="dee"> 
        <tr>
     <th>Name</th>
     <th>Email</th>
     <th>Status</th>
+    <th>Send Mail</th>
     </tr>
+    {% for i in obj %} 
     <tr>
     <td>{{ i.name}}</td>
     <td>{{ i.email }}</td>
     <td>{{i.status}}</td>
     <td><a class="btn btn-primary" href="{% url 'visitormail'  username=uname fid=i.id %}">{{ i.id }}</a></td>
   </tr>
-  </table>
     {% endfor %}
+    </table>
     </div>
-    
+    </c>
     <script>
         function showAndHide(d){
             var x = document.getElementById(d);
