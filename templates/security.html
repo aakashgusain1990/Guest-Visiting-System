@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+{% load static %}
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,15 +9,70 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <title>Document</title>
+     <link rel="stylesheet" type="text/css" href="{% static 'css/4.css' %}">
+        <style>
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: right;
+}
+
+li a {
+  display: block;
+  color: yellow;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+li a:hover {
+  display: block;
+  color: yellow;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+</style>  
 </head>
 <body>
-    <h1>Security</h1>
+<ul>
+<li><a href="/index"  class="btn btn-info btn-lg">
+          <span class="glyphicon glyphicon-log-out"></span> Log out
+        </a></li>
+        <li><a href="#home">GUEST VISIT INFORMATION</a></li>
+</ul>
+    <h3>Security</h3>
     <br/>
-    
+    <c>
     <div  id = "va">
-        {% for appointment in appointments %}
-        <p>{{ appointment.fname }} {{ appointment.timeIn }} {{ appointment.doa }} {{ appointment.purpose }} {{ appointment.status }} {{ appointment.token }}</p>
+     <table class ="dee"> 
+       <tr>
+    <th>Name</th>
+    <th>TimeIn</th>
+    <th>Date</th>
+    <th>Purpose</th>
+    <th>Status</th>
+    <th>Token</th>
+    <th>Decline appointment</th>
+    </tr>
+    {% for appointment in appointments %}
+    <tr>
+    <td>{{ appointment.fname }}</td>
+    <td>{{ appointment.timeIn }}</td>
+    <td>{{ appointment.doa }}</td>
+    <td>{{ appointment.purpose }}</td>
+    <td>{{ appointment.status }}</td>
+    <td>{{ appointment.token }}</td>
+     
+  </tr>
     {% endfor %}
+    </table>     
+   
     </div>
     
     <script>

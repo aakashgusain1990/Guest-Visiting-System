@@ -14,7 +14,8 @@ font-size: 30px;
 form {
   background-color: #D291BC  ;
   width: 450px;
-  height: 100px
+  
+  height: 100px;
   margin: -120px 0 0 -182px;
   padding: 10px;
   box-shadow: 0 0 40px #D291BC ;
@@ -23,7 +24,7 @@ form {
 g{
 background-color: #D291BC  ;
  position: absolute;
-  top: 10%;
+  top: 30%;
   left: 35%;
 }
 .k{

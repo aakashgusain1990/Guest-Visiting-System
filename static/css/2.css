@@ -12,7 +12,7 @@ font-family: 'Open Sans Condensed', sans-serif;
   background-color: #D291BC ;
   color: #00008B;
   position: absolute;
-  top: 15%;
+  top: 25%;
   left: 35%;
   padding: 10px;
   overflow:scroll;
@@ -42,7 +42,7 @@ font-family: 'Open Sans Condensed', sans-serif;
   g{
   width: 30%;
   top: 10%;
-  
+  left: 1%;
   }
   .b1 {
  background-color: #D291BC  ;
@@ -50,6 +50,7 @@ font-family: 'Open Sans Condensed', sans-serif;
   overflow-y: auto;
    border: 2px solid darkblue;
    width = 50%
+   left: 1%;
   padding: 10px 20px;
   text-align: center;
   display: inline-block;

@@ -10,8 +10,42 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <title>Document</title>
     <link rel="stylesheet" type="text/css" href="{% static 'css/4.css' %}">
+        <style>
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: right;
+}
+
+li a {
+  display: block;
+  color: yellow;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+li a:hover {
+  display: block;
+  color: yellow;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+</style> 
 </head>
 <body>
+ <ul>
+ <li><a href="/index"  class="btn btn-info btn-lg">
+          <span class="glyphicon glyphicon-log-out"></span> Log out
+        </a></li>
+        <li><a href="#home">GUEST VISIT INFORMATION</a></li>
+</ul>
     <h3>Faculty</h3>
     <br/>
     <c>

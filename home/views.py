@@ -11,6 +11,9 @@ from .forms import appointmentForm, facultyForm, visitorForm, securityForm, logi
 def home(request):
     return render(request,'index.html')
 
+def index(request):
+    return render(request,'index.html')
+
 
 def login(request):
     form = loginForm()

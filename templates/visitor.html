@@ -11,9 +11,44 @@
     <title>Document</title>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" type="text/css" href="{% static 'css/4.css' %}">
+    <style>
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: right;
+}
+
+li a {
+  display: block;
+  color: yellow;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+li a:hover {
+  display: block;
+  color: yellow;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+</style>  
+
 </head>
 <body>
+   <ul>
    
+   <li><a href="/index"  class="btn btn-info btn-lg">
+          <span class="glyphicon glyphicon-log-out"></span> Log out
+        </a></li>
+        <li><a href="#home">GUEST VISIT INFORMATION</a></li>
+</ul>
     <br/>
     
    <g class="w3-sidebar w3-transparent w3-bar-block" style="width:15%;padding:10px 20px">
@@ -24,7 +59,8 @@
     <c>
 
     <div style="display:none" id = "va">
-    <h3>Appointments Approved </h3>
+    
+    <h3>Appointments </h3>
     <table class ="dee"> 
      
        <tr>
