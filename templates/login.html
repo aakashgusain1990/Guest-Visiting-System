@@ -53,8 +53,9 @@ li a:hover {
       <h2>Login To Your Account </h2>
         {% csrf_token %}
         {{ form.as_p }}
-        <input type="submit" value="Submit" name = "submit2" onclick="ShowAndHide('faculty')">
-    </g>
+        <input type="submit" value="Submit" name = "submit2">
+</form>
+      </g>
 
       <script>
          {% if messages %}

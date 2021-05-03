@@ -19,6 +19,7 @@ class securityForm(forms.ModelForm):
 class loginForm(forms.Form):
     username = forms.CharField(label = "Username",max_length=50,widget=forms.TextInput(attrs={'class' : 'k'}))
     password = forms.CharField(label = "Password",max_length=50,widget=forms.PasswordInput(attrs={'class' : 'k'})) 
+   
 class visitorForm(forms.ModelForm):
     password = forms.CharField(widget=forms.PasswordInput,max_length=50)
     class Meta:

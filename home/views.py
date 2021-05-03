@@ -78,7 +78,7 @@ def register(request):
                 query = role.objects.get(username=form2.cleaned_data['username'])
                 messages.error(request, "Username or Email Address already taken")
             except:    
-                query = role(username = form2.cleaned_data['username'], roles = 'faculty')
+                query = role(username = form2.cleaned_data['username'], roles = 'security')
                 form2.save()
                 query.save()
                 return redirect("home")
