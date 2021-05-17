@@ -1,6 +1,6 @@
 
 body{
-	background-image: url('/static/images/1.jpg');
+	background-image: url('/static/images/3.jpg');
 	background-size: cover;
 }
 
@@ -12,20 +12,21 @@ font-size: 30px;
 }
 
 form {
-  background-color: #D291BC  ;
+  background-color: #D291BC;
   width: 450px;
-  
-  height: 100px;
+  height: 500px;
+  overflow:scroll;
   margin: -120px 0 0 -182px;
   padding: 10px;
   box-shadow: 0 0 40px #D291BC ;
  
   }
+
 g{
-background-color: #D291BC  ;
+background-color: #D291BC;
  position: absolute;
   top: 30%;
-  left: 35%;
+  left: 45%;
 }
 .k{
 color: #00008B;
