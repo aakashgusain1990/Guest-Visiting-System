@@ -93,13 +93,13 @@ li a:hover {
     <th>Name</th>
     <th>Email</th>
     <th>Status</th>
-    <th>Send Mail</th>
+    <!-- <th>Send Mail</th> -->
     </tr>
     {% for i in obj %} 
     <tr>
     <td>{{ i.name}}</td>
     <td>{{ i.email }}</td>
-    <td>{{i.status}}</td>
+    
     <td><a class="btn btn-primary" href="{% url 'visitormail'  username=uname fid=i.id %}">{{ i.id }}</a></td>
   </tr>
     {% endfor %}

@@ -157,7 +157,7 @@ def emailfaculty(oid):
     tok = str(uuid.uuid4())
     obj.token = tok
     obj.save()
-    message = f'Hi {obj.username} {obj.timeIn} {obj.doa} {obj.purpose} http://127.0.0.1:8000/accept/{tok} or http://127.0.0.1:8000/decline/{tok} '
+    message = f'Respected Sir, \nI ({obj.username}) would like to make an appointment on {obj.doa} at {obj.timeIn} for the reason given below: \n {obj.purpose} \n Accept: http://127.0.0.1:8000/accept/{tok} \n Decline: http://127.0.0.1:8000/decline/{tok} '
     send_mail('SUBJECT',
     message,
     'aakashgusain2806@gmail.com',
