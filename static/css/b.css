@@ -5,10 +5,10 @@ font-family: 'Open Sans Condensed', sans-serif;
  position: absolute;
 font-size: 100px;
   top: 10%;
-  left: 25%;
+  left: 35%;
 }
 body{
-	background-image: url('/static/images/1.jpg');
+	background-image: url('/static/images/3.jpg');
 	background-size: cover;
 }
 c{

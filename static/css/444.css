@@ -1,5 +1,5 @@
 body{
-	background-image: url('/static/images/1.jpg');
+	background-image: url('/static/images/3.jpg');
 	background-size: cover;
 }
 p{
@@ -35,9 +35,9 @@ color: #FFFF99;
 text-decoration-style: wavy;
 font-family: 'Open Sans Condensed', sans-serif;
  position: absolute;
-font-size: 50px;
+font-size: 60px;
   top: 17%;
-  left: 38%;
+  left: 47%;
 }
 .b2{
  background-color: #D291BC  ;
